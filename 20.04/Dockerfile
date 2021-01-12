@@ -1,9 +1,9 @@
-FROM       ubuntu:14.04
+FROM       ubuntu:20.04
 MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server
+RUN apt-get install -y openssh-server cmake build-essential vim git
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
