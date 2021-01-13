@@ -3,7 +3,11 @@ MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
 RUN apt-get update
 
-RUN apt-get install -y openssh-server cmake build-essential vim git
+RUN apt-get install -y openssh-server cmake build-essential vim git git-lfs locales
+
+RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
+            locale-gen
+
 RUN mkdir /var/run/sshd
 
 RUN echo 'root:root' |chpasswd
