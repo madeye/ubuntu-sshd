@@ -3,6 +3,8 @@ MAINTAINER Aleksandar Diklic "https://github.com/rastasheep"
 
 RUN apt-get update
 
+ENV DEBIAN_FRONTEND="noninteractive" TZ="Asia/Shanghai"
+
 RUN apt-get install -y openssh-server cmake build-essential vim git git-lfs locales
 
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
